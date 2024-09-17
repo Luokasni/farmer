@@ -3,212 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmer Portal</title>
+    <title>Farm to Table App</title>
     <style>
-        /* Basic reset and styling */
-        body, h1, h2, p, ul, li, form, input, button, section {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
-
-        nav {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+        header {
+            background-color: #28a745;
+            color: white;
             text-align: center;
+            padding: 15px 0;
         }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        section {
+        .container {
             padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-
-        input[type="text"],
-        input[type="password"] {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .home-section {
+            text-align: center;
+            margin-top: 50px;
         }
-
-        button {
-            padding: 10px;
+        .home-section h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .role-selection button {
             background-color: #28a745;
-            color: #fff;
+            color: white;
+            padding: 15px 30px;
             border: none;
-            border-radius: 4px;
+            margin: 15px;
+            font-size: 18px;
+            border-radius: 5px;
             cursor: pointer;
         }
-
-        button:hover {
+        .role-selection button:hover {
             background-color: #218838;
         }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .product-item {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 4px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            text-align: center;
-        }
-
-        #map {
-            height: 400px;
-            background-color: #eee;
+        .login-section {
+            display: none;
             margin-top: 20px;
+        }
+        .login-box {
+            width: 30%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-box label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-box button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#farmer-login">Farmer Login</a></li>
-            <li><a href="#customer-login">Customer Login</a></li>
-            <li><a href="#delivery-login">Delivery Login</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#location">Live Location</a></li>
-        </ul>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h1>Welcome to the Farmer Portal</h1>
-        <p>Connecting farmers with customers and delivery services.</p>
-    </section>
+<header>
+    <h1>Farm to Table Marketplace</h1>
+</header>
 
-    <!-- Farmer Login -->
-    <section id="farmer-login">
-        <h2>Farmer Login</h2>
-        <form id="farmerForm">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </section>
-
-    <!-- Customer Login -->
-    <section id="customer-login">
-        <h2>Customer Login</h2>
-        <form id="customerForm">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </section>
-
-    <!-- Delivery Login -->
-    <section id="delivery-login">
-        <h2>Delivery Login</h2>
-        <form id="deliveryForm">
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products">
-        <h2>Available Products</h2>
-        <div class="product-list">
-            <div class="product-item">
-                <h3>Product 1</h3>
-                <p>Price: $10</p>
-            </div>
-            <div class="product-item">
-                <h3>Product 2</h3>
-                <p>Price: $20</p>
-            </div>
-            <!-- Add more products as needed -->
+<div class="container">
+    
+    <!-- Home Section: Role Selection -->
+    <section class="home-section">
+        <h2>Select Your Role</h2>
+        <div class="role-selection">
+            <button onclick="showLogin('farmer')">I am a Farmer</button>
+            <button onclick="showLogin('customer')">I am a Customer</button>
+            <button onclick="showLogin('delivery')">I am a Delivery Person</button>
         </div>
     </section>
 
-    <!-- Live Location Section -->
-    <section id="location">
-        <h2>Live Location Tracking</h2>
-        <p>Delivery personnel location will be displayed here.</p>
-        <div id="map"></div>
+    <!-- Farmer Login Section -->
+    <section id="farmer-login" class="login-section">
+        <div class="login-box">
+            <h2>Farmer Login</h2>
+            <label for="farmer-email">Email:</label>
+            <input type="email" id="farmer-email" placeholder="Farmer Email">
+            <label for="farmer-password">Password:</label>
+            <input type="password" id="farmer-password" placeholder="Farmer Password">
+            <button onclick="farmerLogin()">Login as Farmer</button>
+        </div>
     </section>
 
-    <script>
-        // JavaScript for handling form submissions and map loading
+    <!-- Customer Login Section -->
+    <section id="customer-login" class="login-section">
+        <div class="login-box">
+            <h2>Customer Login</h2>
+            <label for="customer-email">Email:</label>
+            <input type="email" id="customer-email" placeholder="Customer Email">
+            <label for="customer-password">Password:</label>
+            <input type="password" id="customer-password" placeholder="Customer Password">
+            <button onclick="customerLogin()">Login as Customer</button>
+        </div>
+    </section>
 
-        // Function to initialize Google Map
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
+    <!-- Delivery Person Login Section -->
+    <section id="delivery-login" class="login-section">
+        <div class="login-box">
+            <h2>Delivery Person Login</h2>
+            <label for="delivery-email">Email:</label>
+            <input type="email" id="delivery-email" placeholder="Delivery Person Email">
+            <label for="delivery-password">Password:</label>
+            <input type="password" id="delivery-password" placeholder="Delivery Password">
+            <button onclick="deliveryLogin()">Login as Delivery Person</button>
+        </div>
+    </section>
 
-            // Example marker
-            var marker = new google.maps.Marker({
-                position: {lat: -34.397, lng: 150.644},
-                map: map,
-                title: 'Delivery Location'
-            });
+</div>
+
+<script>
+    // Function to show login form based on user selection
+    function showLogin(role) {
+        // Hide all login sections
+        document.getElementById('farmer-login').style.display = 'none';
+        document.getElementById('customer-login').style.display = 'none';
+        document.getElementById('delivery-login').style.display = 'none';
+
+        // Show the relevant login section
+        if (role === 'farmer') {
+            document.getElementById('farmer-login').style.display = 'block';
+        } else if (role === 'customer') {
+            document.getElementById('customer-login').style.display = 'block';
+        } else if (role === 'delivery') {
+            document.getElementById('delivery-login').style.display = 'block';
         }
+    }
 
-        // Load Google Maps script
-        function loadScript() {
-            var script = document.createElement('script');
-            script.src = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap";
-            script.async = true;
-            document.body.appendChild(script);
-        }
+    function farmerLogin() {
+        alert('Farmer logged in');
+        // Add functionality for farmer login here
+    }
 
-        window.onload = loadScript;
-    </script> 
+    function customerLogin() {
+        alert('Customer logged in');
+        // Add functionality for customer login here
+    }
+
+    function deliveryLogin() {
+        alert('Delivery person logged in');
+        // Add functionality for delivery login here
+    }
+</script>
 
 </body>
 </html>
-
